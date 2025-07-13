@@ -16,7 +16,9 @@ Una aplicación Android completa desarrollada en Kotlin con Jetpack Compose para
 - **Búsqueda avanzada**: Por nombre, código de barras, SKU o categoría
 - **Control de stock**: Alertas de stock bajo, actualización en tiempo real
 - **Categorización**: Organización por categorías con colores personalizables
-- **Imágenes de productos**: Soporte para múltiples imágenes por producto
+- **Imágenes de productos**: Múltiples imágenes por producto con imagen principal
+- **Captura de fotos**: Cámara integrada para tomar fotos de productos
+- **Galería de imágenes**: Selección desde galería del dispositivo
 
 ### 🛒 Sistema de Ventas
 - **Carrito de compras**: Interfaz intuitiva para agregar productos
@@ -24,31 +26,40 @@ Una aplicación Android completa desarrollada en Kotlin con Jetpack Compose para
 - **Cálculo automático**: Subtotal, impuestos y total
 - **Historial de ventas**: Registro completo de todas las transacciones
 - **Múltiples métodos de pago**: Efectivo, tarjeta, transferencia
+- **Generación automática de recibos**: PDF con formato profesional
+- **Documentos adjuntos**: Adjuntar comprobantes de pago
 
 ### 🛍️ Gestión de Compras
 - **Registro de compras**: Proveedores, fechas, cantidades
 - **Actualización automática**: Stock se actualiza al registrar compras
 - **Historial de compras**: Seguimiento de todas las adquisiciones
 - **Gestión de proveedores**: Información de contacto y productos
+- **Facturas automáticas**: Generación de facturas de compra
+- **Documentos adjuntos**: Adjuntar facturas y comprobantes de proveedores
 
 ### 💰 Control de Gastos
 - **Categorización de gastos**: Rentas, servicios, marketing, etc.
 - **Registro de recibos**: Captura de imágenes de comprobantes
 - **Reportes de gastos**: Análisis por categoría y período
 - **Gastos recurrentes**: Configuración de gastos automáticos
+- **Documentos adjuntos**: Adjuntar recibos, facturas y comprobantes
+- **Digitalización**: Captura de documentos con la cámara
 
 ### 📈 Reportes Avanzados
 - **Múltiples formatos**: CSV, Excel, PDF
 - **Filtros personalizables**: Por fecha, categoría, producto
 - **Gráficos interactivos**: Ventas, inventario, gastos
 - **Exportación**: Compartir reportes por email o almacenamiento
+- **Generación automática**: Reportes PDF con formato profesional
+- **Almacenamiento local**: Todos los reportes guardados para consulta
 
 ### ⚙️ Configuración Completa
 - **Modo oscuro**: Tema personalizable
 - **Moneda configurable**: Símbolo, decimales, tasa de cambio
 - **Información empresarial**: Nombre, dirección, contacto
-- **Respaldo automático**: JSON con imágenes incluidas
+- **Respaldo automático**: JSON con imágenes y documentos incluidos
 - **Umbrales personalizables**: Stock bajo, respaldos automáticos
+- **Gestión de archivos**: Organización automática de documentos e imágenes
 
 ### 🔐 Gestión de Usuarios y Roles
 - **Múltiples roles**: Admin, Manager, Employee, Viewer
@@ -86,10 +97,11 @@ Una aplicación Android completa desarrollada en Kotlin con Jetpack Compose para
 - **Dependency Injection**: Hilt para gestión de dependencias
 
 ### Base de Datos
-- **Entidades principales**: Users, Products, Categories, Transactions, Expenses
+- **Entidades principales**: Users, Products, Categories, Transactions, Expenses, Documents, ProductImages
 - **Relaciones**: Foreign keys para integridad referencial
 - **Índices optimizados**: Búsquedas rápidas por código de barras
 - **Migraciones**: Soporte para actualizaciones de esquema
+- **SQLite**: Base de datos local robusta y eficiente
 
 ### UI/UX
 - **Responsive Design**: Adaptable a diferentes tamaños de pantalla
@@ -202,7 +214,8 @@ val CustomColorScheme = lightColorScheme(
 ### Formatos de Exportación
 - **CSV**: Para análisis en Excel
 - **Excel**: Reportes formateados
-- **JSON**: Respaldo completo con imágenes
+- **JSON**: Respaldo completo con imágenes y documentos
+- **PDF**: Reportes y documentos con formato profesional
 
 ## 🔒 Seguridad y Privacidad
 

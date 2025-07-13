@@ -158,7 +158,8 @@ fun InventoryScreen(
 @Composable
 fun AddProductDialog(
     onDismiss: () -> Unit,
-    onProductAdded: (Product) -> Unit
+    onProductAdded: (Product) -> Unit,
+    fileService: FileService
 ) {
     var name by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
@@ -168,6 +169,8 @@ fun AddProductDialog(
     var cost by remember { mutableStateOf("") }
     var stock by remember { mutableStateOf("") }
     var minStock by remember { mutableStateOf("") }
+    var showImageDialog by remember { mutableStateOf(false) }
+    var productImages by remember { mutableStateOf(listOf<ProductImage>()) }
 
     AlertDialog(
         onDismissRequest = onDismiss,
@@ -232,6 +235,16 @@ fun AddProductDialog(
                         modifier = Modifier.weight(1f)
                     )
                 }
+                
+                // Botón para agregar imágenes
+                Button(
+                    onClick = { showImageDialog = true },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Icon(Icons.Default.PhotoCamera, contentDescription = null)
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text("Agregar Imágenes (${productImages.size})")
+                }
             }
         },
         confirmButton = {
@@ -259,4 +272,15 @@ fun AddProductDialog(
             }
         }
     )
+    
+    // Dialog para manejar imágenes
+    if (showImageDialog) {
+        ImageCaptureDialog(
+            productId = 0, // Se asignará cuando se cree el producto
+            currentImages = productImages,
+            onImagesUpdated = { images -> productImages = images },
+            onDismiss = { showImageDialog = false },
+            fileService = fileService
+        )
+    }
 }

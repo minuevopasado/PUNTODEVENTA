@@ -34,4 +34,14 @@ class Converters {
     fun toExpenseCategory(value: String): ExpenseCategory {
         return ExpenseCategory.valueOf(value)
     }
+    
+    @TypeConverter
+    fun fromDocumentType(value: DocumentType): String {
+        return value.name
+    }
+    
+    @TypeConverter
+    fun toDocumentType(value: String): DocumentType {
+        return DocumentType.valueOf(value)
+    }
 }

@@ -8,17 +8,26 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.core.graphics.drawable.toBitmap
+import coil.compose.AsyncImage
+import coil.request.ImageRequest
 import com.inventarioapp.data.entities.Product
+import com.inventarioapp.data.entities.ProductImage
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductCard(
     product: Product,
+    productImages: List<ProductImage> = emptyList(),
     onEdit: () -> Unit,
     onDelete: () -> Unit,
-    onStockUpdate: (Int) -> Unit
+    onStockUpdate: (Int) -> Unit,
+    onImageClick: () -> Unit = {}
 ) {
     var showStockDialog by remember { mutableStateOf(false) }
     var newStock by remember { mutableStateOf(product.stock.toString()) }
@@ -30,6 +39,31 @@ fun ProductCard(
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
+            // Imagen del producto
+            if (productImages.isNotEmpty()) {
+                val primaryImage = productImages.find { it.isPrimary } ?: productImages.first()
+                val context = LocalContext.current
+                
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(120.dp)
+                        .clickable { onImageClick() },
+                    elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                ) {
+                    AsyncImage(
+                        model = ImageRequest.Builder(context)
+                            .data(primaryImage.imagePath)
+                            .crossfade(true)
+                            .build(),
+                        contentDescription = "Imagen del producto",
+                        modifier = Modifier.fillMaxSize(),
+                        contentScale = ContentScale.Crop
+                    )
+                }
+                Spacer(modifier = Modifier.height(12.dp))
+            }
+            
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,

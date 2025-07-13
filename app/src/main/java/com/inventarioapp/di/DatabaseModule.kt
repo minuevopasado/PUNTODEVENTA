@@ -54,4 +54,14 @@ object DatabaseModule {
     fun provideAppSettingsDao(database: AppDatabase): AppSettingsDao {
         return database.appSettingsDao()
     }
+    
+    @Provides
+    fun provideProductImageDao(database: AppDatabase): ProductImageDao {
+        return database.productImageDao()
+    }
+    
+    @Provides
+    fun provideDocumentDao(database: AppDatabase): DocumentDao {
+        return database.documentDao()
+    }
 }

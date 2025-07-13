@@ -13,9 +13,11 @@ import com.inventarioapp.data.database.dao.*
         User::class,
         Category::class,
         Product::class,
+        ProductImage::class,
         Transaction::class,
         TransactionItem::class,
         Expense::class,
+        Document::class,
         AppSettings::class
     ],
     version = 1,
@@ -30,6 +32,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun transactionDao(): TransactionDao
     abstract fun transactionItemDao(): TransactionItemDao
     abstract fun expenseDao(): ExpenseDao
+    abstract fun productImageDao(): ProductImageDao
+    abstract fun documentDao(): DocumentDao
     abstract fun appSettingsDao(): AppSettingsDao
 
     companion object {
