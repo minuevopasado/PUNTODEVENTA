@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">InventarioApp</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_inventory">Inventario</string>
+    <string name="nav_sales">Ventas</string>
+    <string name="nav_purchases">Compras</string>
+    <string name="nav_expenses">Gastos</string>
+    <string name="nav_reports">Reportes</string>
+    <string name="nav_settings">Configuración</string>
+    
+    <!-- Common -->
+    <string name="add">Agregar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="search">Buscar</string>
+    <string name="export">Exportar</string>
+    <string name="import">Importar</string>
+    
+    <!-- Dashboard -->
+    <string name="today_sales">Ventas Hoy</string>
+    <string name="total_products">Total Productos</string>
+    <string name="low_stock">Stock Bajo</string>
+    <string name="inventory_value">Valor Inventario</string>
+    <string name="weekly_sales">Ventas de la Semana</string>
+    <string name="recent_activity">Actividad Reciente</string>
+    
+    <!-- Inventory -->
+    <string name="product_name">Nombre del Producto</string>
+    <string name="product_description">Descripción</string>
+    <string name="barcode">Código de Barras</string>
+    <string name="sku">SKU</string>
+    <string name="price">Precio</string>
+    <string name="cost">Costo</string>
+    <string name="stock">Stock</string>
+    <string name="min_stock">Stock Mínimo</string>
+    <string name="scan_barcode">Escanear Código</string>
+    <string name="add_product">Agregar Producto</string>
+    <string name="edit_product">Editar Producto</string>
+    <string name="update_stock">Actualizar Stock</string>
+    
+    <!-- Sales -->
+    <string name="shopping_cart">Carrito de Compras</string>
+    <string name="add_to_cart">Agregar al Carrito</string>
+    <string name="remove_from_cart">Quitar del Carrito</string>
+    <string name="complete_sale">Completar Venta</string>
+    <string name="clear_cart">Limpiar Carrito</string>
+    <string name="total">Total</string>
+    <string name="quantity">Cantidad</string>
+    <string name="subtotal">Subtotal</string>
+    
+    <!-- Settings -->
+    <string name="dark_mode">Modo Oscuro</string>
+    <string name="currency">Moneda</string>
+    <string name="currency_symbol">Símbolo de Moneda</string>
+    <string name="decimal_places">Decimales</string>
+    <string name="tax_rate">Tasa de Impuesto</string>
+    <string name="company_name">Nombre de la Empresa</string>
+    <string name="company_address">Dirección</string>
+    <string name="company_phone">Teléfono</string>
+    <string name="company_email">Email</string>
+    <string name="backup">Respaldo</string>
+    <string name="restore">Restaurar</string>
+    <string name="auto_backup">Respaldo Automático</string>
+    <string name="backup_days">Días entre respaldos</string>
+    
+    <!-- Reports -->
+    <string name="sales_report">Reporte de Ventas</string>
+    <string name="inventory_report">Reporte de Inventario</string>
+    <string name="expenses_report">Reporte de Gastos</string>
+    <string name="date_range">Rango de Fechas</string>
+    <string name="start_date">Fecha Inicio</string>
+    <string name="end_date">Fecha Fin</string>
+    <string name="generate_report">Generar Reporte</string>
+    <string name="export_csv">Exportar CSV</string>
+    <string name="export_excel">Exportar Excel</string>
+    
+    <!-- Messages -->
+    <string name="no_data_available">No hay datos disponibles</string>
+    <string name="loading">Cargando...</string>
+    <string name="error_occurred">Ocurrió un error</string>
+    <string name="success">Éxito</string>
+    <string name="warning">Advertencia</string>
+    <string name="info">Información</string>
+    
+    <!-- Permissions -->
+    <string name="camera_permission_required">Se requiere permiso de cámara para escanear códigos de barras</string>
+    <string name="storage_permission_required">Se requiere permiso de almacenamiento para exportar reportes</string>
+</resources>
