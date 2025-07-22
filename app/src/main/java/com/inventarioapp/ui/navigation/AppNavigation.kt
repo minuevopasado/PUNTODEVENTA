@@ -25,6 +25,11 @@ sealed class Screen(val route: String, val title: String, val icon: ImageVector)
     object Expenses : Screen("expenses", "Gastos", Icons.Default.Receipt)
     object Reports : Screen("reports", "Reportes", Icons.Default.Assessment)
     object Settings : Screen("settings", "Configuración", Icons.Default.Settings)
+    
+    // Pantallas adicionales (no en bottom navigation)
+    object UserManagement : Screen("user_management", "Usuarios", Icons.Default.People)
+    object BackupSync : Screen("backup_sync", "Backup & Sync", Icons.Default.CloudSync)
+    object SalesDocuments : Screen("sales_documents", "Documentos", Icons.Default.Description)
 }
 
 val screens = listOf(
@@ -93,6 +98,15 @@ fun AppNavigation(
             }
             composable(Screen.Settings.route) {
                 SettingsScreen(navController, themeManager)
+            }
+            composable(Screen.UserManagement.route) {
+                UserManagementScreen(navController)
+            }
+            composable(Screen.BackupSync.route) {
+                BackupSyncScreen(navController)
+            }
+            composable(Screen.SalesDocuments.route) {
+                SalesDocumentsScreen(navController)
             }
         }
     }

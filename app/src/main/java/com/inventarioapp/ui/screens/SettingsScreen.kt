@@ -9,6 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.inventarioapp.ui.theme.ThemeManager
@@ -275,6 +276,45 @@ fun SettingsScreen(
                 }
             }
 
+            // Nuevas opciones de administración
+            item {
+                Text(
+                    text = "Administración",
+                    style = MaterialTheme.typography.titleMedium,
+                    modifier = Modifier.padding(vertical = 8.dp)
+                )
+            }
+            
+            item {
+                // Gestión de Usuarios (Solo para Admin)
+                SettingsItem(
+                    icon = Icons.Default.People,
+                    title = "Gestión de Usuarios",
+                    subtitle = "Crear y administrar usuarios del sistema",
+                    onClick = { navController.navigate("user_management") }
+                )
+            }
+            
+            item {
+                // Backup y Sincronización
+                SettingsItem(
+                    icon = Icons.Default.CloudSync,
+                    title = "Backup y Sincronización",
+                    subtitle = "Respaldar datos en la nube y sincronizar con Google Sheets",
+                    onClick = { navController.navigate("backup_sync") }
+                )
+            }
+            
+            item {
+                // Documentos de Ventas
+                SettingsItem(
+                    icon = Icons.Default.Description,
+                    title = "Documentos de Ventas",
+                    subtitle = "Consultar, reimprimir y gestionar recibos de ventas",
+                    onClick = { navController.navigate("sales_documents") }
+                )
+            }
+
             item {
                 Text(
                     text = "Acerca de",
@@ -354,6 +394,58 @@ fun SettingsScreen(
                     }
                 }
             )
+        }
+    }
+}
+
+@Composable
+fun SettingsItem(
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    title: String,
+    subtitle: String,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                modifier = Modifier.size(24.dp),
+                tint = MaterialTheme.colorScheme.primary
+            )
+            
+            Spacer(modifier = Modifier.width(16.dp))
+            
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = androidx.compose.ui.text.font.FontWeight.Medium
+                )
+                Text(
+                    text = subtitle,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            
+            IconButton(onClick = onClick) {
+                Icon(
+                    imageVector = Icons.Default.ChevronRight,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
         }
     }
 }
